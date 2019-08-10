@@ -9,7 +9,6 @@ def parse(json):
             json = p.getJSON()
         else:
             json = json[1:]
-    print(p)
     return p
     
 def parser(json):
@@ -138,14 +137,7 @@ def parseObject(json):
         elif not (getType(object[0]) == JSONTypes.INVALID):
             buildKey = not buildKey
             element = parser(object)
-            '''
-            print(tmpKey, end="")
-            print(" : ", end="")
-            '''
             object = element.getJSON()
-            '''
-            print(element)
-            '''
             p.add(tmpKey, element)
         else:
             object = object[1:]
